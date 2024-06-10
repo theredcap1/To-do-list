@@ -25,10 +25,25 @@ input {
 }
 button {
     font-size: 2rem;
+    border-radius: 7%;
+    border: none;
+}
+.delete {
+    background-color: red;
+    color: white;
 }
 li {
     margin-top: 7%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 60vw;
+    padding: 5% 0 5% 0;
+    color: white;
+}
+.Task {
+    background-color: #030303;
+}
+.moveup, .movedown {
+    background-color: blue;
+    color: white;
 }

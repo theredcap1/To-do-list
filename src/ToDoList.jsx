@@ -16,6 +16,23 @@ function ToDoList() {
         const newList = List.filter((_, i) => i !== index)
         setList(newList);
     }
+
+    function moveUp(index) {
+        if(index > 0 && index < List.length){
+            const updatedList = [...List];
+            [updatedList[index - 1], updatedList[index]] = [updatedList[index], updatedList[index - 1]];
+            setList(updatedList);
+        }
+    }
+
+    function moveDown(index) {
+        if(index >= 0 && index < List.length -1){
+            const updatedList = [...List];
+            [updatedList[index + 1], updatedList[index]] = [updatedList[index], updatedList[index + 1]];
+            setList(updatedList);
+        }
+    }
+
     return(
         <div>
             <h1>To-Do List</h1>
@@ -23,9 +40,11 @@ function ToDoList() {
             <button onClick={(newTask) => addNewTask(newTask)}>Add</button>
             <ul>
                 {List.map((newTask, index)  =>
-                    <li key={index}>
+                    <li key={index} className="Task">
                         {newTask}
-                        <button onClick={() => deleteTask(index)}>Delete</button>
+                        <button className="delete" onClick={() => deleteTask(index)}>Delete</button>
+                        <button className="moveup" onClick={() => moveUp(index)}>Up</button>
+                        <button className="movedown" onClick={() => moveDown(index)}>Down</button>
                     </li>
                 )}
             </ul>
