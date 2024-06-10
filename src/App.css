@@ -42,8 +42,15 @@ li {
 }
 .Task {
     background-color: #030303;
+    width: 90vw;
 }
 .moveup, .movedown {
     background-color: blue;
     color: white;
+}
+button {
+    cursor: pointer;
+}
+.add:hover {
+    background-color: #6c6c6c;
 }

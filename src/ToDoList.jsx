@@ -37,7 +37,7 @@ function ToDoList() {
         <div>
             <h1>To-Do List</h1>
             <input type="text" placeholder="Enter a task" onChange={handleChange} style={{marginBottom: '5%'}} value={newTask}/>
-            <button onClick={(newTask) => addNewTask(newTask)}>Add</button>
+            <button className="add" onClick={(newTask) => addNewTask(newTask)}>Add</button>
             <ul>
                 {List.map((newTask, index)  =>
                     <li key={index} className="Task">
